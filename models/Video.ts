@@ -21,16 +21,16 @@ _id?:mongoose.Types.ObjectId,
 
 const videoSchema = new Schema<VideoInfo>(
   {
-   
+    
     title: { type: String, required: true, unique: true },
     description: { type: String, required: true },
     videoUrl: { type: String, required: true },
     thumbnailUrl: { type: String, required: true },
     controls: { type: Boolean, default: true },
     transformation: {
-      width: { type: Number, default: VideoDimension},
-      height: { type: Number, default: VideoDimension },
-      quality: { type: Number, min:0  ,max:100 },
+      width: { type: Number, default: VideoDimension.width},
+      height: { type: Number, default: VideoDimension.height },
+      quality: { type: Number, min:1 ,max:100 },
     },
   },
   {
